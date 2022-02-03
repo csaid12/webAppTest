@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: csaidwebapptest 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: csaidwebapptest
+  template:
+    metadata:
+      labels:
+        app: csaidwebapptest 
+    spec:
+      containers:
+        - name: csaidwebapptest 
+          image: cloudguard.azurecr.io/csaidwebapptest
+          ports:
+          - containerPort: 80
